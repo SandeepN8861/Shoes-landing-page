@@ -1,0 +1,319 @@
+header {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: .5fr 2fr .5fr;
+  }
+  .headerBg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--primaryColorDark);
+    z-index: 1;
+    transform: skewY(-8deg);
+    transform-origin: top left;
+    background-color: #0ef;
+  }
+  .headerCopy {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    color: var(--primaryColorLight);
+    position: relative;
+    z-index: 3;
+    padding: 3em 0;
+    font-size: 30px;
+  }
+  .color
+  {
+    color: red;
+  }
+  .headerImage {
+    background: #f7f2f1 url("https://images.unsplash.com/photo-1518002171953-a080ee817e1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80") no-repeat;
+    background-size: cover;
+    background-position: 20% bottom;
+    height: 100%;
+    grid-column: 7/12;
+    grid-row: 2/4;
+    z-index: 2;
+    box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.2);
+  }
+  nav {
+    grid-column: 2/12;
+    grid-row: 1/2;
+    
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    
+    .logo {
+      font-family: var(--fontMono);
+      font-size: 1.1em;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      color: var(--secondaryColor);
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        color: var(--primaryColorLight);
+      }
+    }
+    .navLinksWrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2em;
+      align-items: center;
+
+      .navLinksWrapper {
+        display: none;
+      }
+      
+    }
+  }
+  .button {
+    display: inline-block;
+    color: var(--primaryColorLight);
+    background: var(--tertiaryColor);
+    font-family: var(--fontMono);
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5em 2em;
+    border-radius: 2em;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 30px rgba(0,0,0,0.2);
+    width: fit-content;
+    background-color: red;
+    
+    &:hover {
+      background: var(--tertiaryColorDark);
+    }
+   
+}
+.navLinksWrapper.a
+{
+    color: white;
+}
+.nav-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    color: white; 
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4); 
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-text, black);
+    font-weight: 700;
+    background-color: #0ef;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+    margin-left: 45%;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+
+  /*Featured section*/
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* layout */
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7rem 0;
+}
+
+.container {
+  width: 85%;
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.split > * {
+  flex-basis: 30%; /* 100% by default on small screens */
+  min-width: 15rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+    line-height: 1;
+    color: #17353d;
+    margin-bottom: 5rem;
+}
+
+
+  .featured
+  {
+    background: #eee;
+  }
+  .featured__item
+  {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
+    transform: scale(0.85);
+    transition: transform 250ms ease-in-out;
+  }
+  .featured__item:hover,
+  .featured__item:focus {
+    transform: scale(1);
+  }
+  /*Circles*/
+  .featured__item::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    padding: 75% 75% 0 0; /* padding trick to get a circle */
+    border-radius: 50%;
+    background: #2193b0;
+    z-index: -1;
+  }
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .featured__details {
+    opacity: 0;
+    transition: opacity 250ms linear;
+  }
+  
+  .featured__item:hover .featured__details,
+  .featured__item:focus .featured__details {
+    opacity: 1;
+    text-shadow: 0 0 2rem white; /* to prevent overlapping */
+  }
+  
+  .featured__details span {
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  /*Our products*/
+  .product {
+    background: radial-gradient(
+      var(--clr-inner, limegreen),
+      var(--clr-outer, purple)
+    );
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+  
+  .product__title {
+    font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .product__image {
+    margin: -5rem 0 0 0;
+  }
+  
+  @media (min-width: 45rem) {
+    .product {
+      text-align: left;
+      margin-bottom: 9rem;
+    }
+  
+    .product__title {
+      margin: 0;
+    }
+  
+    .product__image {
+      float: right;
+      width: 65%;
+      shape-outside: url(https://github.com/SandeepN8861/Shoe-Landing-Page/blob/main/shoe-1.png?raw=true); /* text will wrap the shoe */
+      shape-margin: 1rem;
+      margin: 0 -5rem 0 0;
+    }
+  
+    .product.shoe-left .product__image {
+      float: left;
+      shape-outside: url(https://github.com/SandeepN8861/Shoe-Landing-Page/blob/main/shoe-2.png?raw=true);
+      margin: 0 0 0 -5em;
+      shape-margin: 2em;
+    }
+  }
+  
+  /* customize CSS variables */
+  .hero {
+    --clr-accent: #faa700;
+  }
+  
+  .shoe-red {
+    --clr-inner: #faa700;
+    --clr-outer: #e48d00;
+    --clr-accent: #a1173c;
+  }
+  
+  .shoe-white {
+    --clr-inner: #fce4b3;
+    --clr-outer: #eac886;
+    --clr-accent: #2f4858;
+  }
+  
+  .shoe-blue {
+    --clr-inner: #6dd5ed;
+    --clr-outer: #2193b0;
+    --clr-accent: #008951;
+  }
